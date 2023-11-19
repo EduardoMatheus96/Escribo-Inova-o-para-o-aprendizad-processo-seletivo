@@ -1,6 +1,6 @@
 import 'dart:io';
 
-int? somatorio(int numero) {
+somatorio(int numero) {
   var somatorio = 0;
 
   for (var i = 0; i < numero; i++) {
@@ -8,17 +8,17 @@ int? somatorio(int numero) {
       somatorio += i;
     }
   }
-  return somatorio;
+  print("O valor do somatorio do numero ${numero} é de ${somatorio}");
 }
 
-int trataInteiro(int numero) {
+int trataInteiro() {
   bool condition;
+  int numero = 0;
   do {
     print("Insira um número inteiro positivo: ");
     String? entrada = stdin.readLineSync();
     try {
-      int numero = int.parse(entrada!);
-      print('Você digitou: $numero');
+      numero = int.parse(entrada!);
     } catch (e) {
       print('Por favor, digite um número inteiro válido.');
     }
@@ -30,4 +30,8 @@ int trataInteiro(int numero) {
   return numero;
 }
 
-void main(List<String> args) {}
+void main(List<String> args) {
+  print("Insira um número inteiro positivo: ");
+  int numero = trataInteiro();
+  somatorio(numero);
+}
