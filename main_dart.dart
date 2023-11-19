@@ -20,7 +20,8 @@ int trataInteiro() {
     try {
       numero = int.parse(entrada!);
     } catch (e) {
-      print('Por favor, digite um número inteiro válido.');
+      print(
+          'O valor inserido nao é um numero o programa sera finalizado com o somatorio de 0 !!!');
     }
     numero.isNegative ? condition = true : condition = false;
 
@@ -31,7 +32,6 @@ int trataInteiro() {
 }
 
 void main(List<String> args) {
-  print("Insira um número inteiro positivo: ");
   int numero = trataInteiro();
   somatorio(numero);
 }
